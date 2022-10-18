@@ -30,7 +30,8 @@ namespace StringLesson
         }
 
         static Dictionary<string,int> AnalyzeString(string s) {
-            char[] chars = s.ToArray();
+
+          
             Dictionary<string, int> result = new Dictionary<string, int>()
             {
                 { "digit",0 }, 
@@ -38,7 +39,8 @@ namespace StringLesson
                 { "symbol",0 }, 
                 { "punctuation",0 } 
             };
-           
+            if (s==null) return result;
+             char[] chars = s.ToArray();
             for (int i = 0; i <s.Length; i++)
             {
                 if (char.IsDigit(chars[i])) result["digit"]++;
